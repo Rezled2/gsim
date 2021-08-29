@@ -168,7 +168,7 @@ func (a *AuraEC) React(ds *core.Snapshot, t *Target) (Aura, bool) {
 		}
 	case core.Hydro:
 		//refresh hydro, update snapshot, and trigger 1 tick
-		a.hydro.Refresh(ds.Durability)
+		a.hydro.Refresh(0.8 * ds.Durability)
 		a.snapshot = ds.Clone()
 		a.source = t.core.F
 		//trigger tick and update tick timer
@@ -186,7 +186,7 @@ func (a *AuraEC) React(ds *core.Snapshot, t *Target) (Aura, bool) {
 		}
 	case core.Electro:
 		//refresh electro, update snapshot, and trigger 1 tick
-		a.electro.Refresh(ds.Durability)
+		a.electro.Refresh(0.8 * ds.Durability)
 		a.snapshot = ds.Clone()
 		a.source = t.core.F
 		//trigger tick and update tick timer

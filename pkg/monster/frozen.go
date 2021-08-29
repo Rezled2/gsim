@@ -138,7 +138,7 @@ func (a *AuraFrozen) React(ds *core.Snapshot, t *Target) (Aura, bool) {
 		}
 		//check if we're topping up hydro here
 		if a.hydro != nil {
-			a.hydro.Refresh(ds.Durability)
+			a.hydro.Refresh(0.8 * ds.Durability)
 			ds.Durability = 0
 			return a, true
 		}
@@ -165,7 +165,7 @@ func (a *AuraFrozen) React(ds *core.Snapshot, t *Target) (Aura, bool) {
 		}
 		//check if we're topping up hydro here
 		if a.cryo != nil {
-			a.cryo.Refresh(ds.Durability)
+			a.cryo.Refresh(0.8 * ds.Durability)
 			ds.Durability = 0
 			return a, true
 		}

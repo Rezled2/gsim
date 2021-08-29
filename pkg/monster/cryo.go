@@ -43,7 +43,7 @@ func (a *AuraCyro) React(ds *core.Snapshot, t *Target) (Aura, bool) {
 		return newFreeze(a, nil, red, t, ds, t.core.F), true
 	case core.Cryo:
 		//refresh
-		a.Refresh(ds.Durability)
+		a.Refresh(0.8 * ds.Durability)
 		ds.Durability = 0
 	case core.Electro:
 		//superconduct
