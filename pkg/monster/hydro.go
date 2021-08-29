@@ -35,7 +35,7 @@ func (a *AuraHydro) React(ds *core.Snapshot, t *Target) (Aura, bool) {
 		a.Reduce(ds, 0.5)
 	case core.Hydro:
 		//refresh
-		a.Refresh(ds.Durability)
+		a.Refresh(0.8 * ds.Durability)
 		ds.Durability = 0
 	case core.Cryo:
 		//first reduce hydro durability by incoming cryo; capped at existing

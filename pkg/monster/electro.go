@@ -46,7 +46,7 @@ func (a *AuraElectro) React(ds *core.Snapshot, t *Target) (Aura, bool) {
 	case core.Electro:
 		//have to be careful here.. if there's also a hydro then we have to trigger a tick
 		//refresh
-		a.Refresh(ds.Durability)
+		a.Refresh(0.8 * ds.Durability)
 		ds.Durability = 0
 	default:
 		return a, false
